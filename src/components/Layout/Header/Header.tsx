@@ -3,9 +3,9 @@ import React, { Fragment } from "react";
 
 const Header = () => {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-primary">
             <div className="flex-1">
-                <Link href="/" className="btn btn-ghost text-xl">
+                <Link href="/" className="btn btn-ghost text-xl text-alt">
                     HolySheet
                 </Link>
             </div>
@@ -14,7 +14,7 @@ const Header = () => {
                     <input
                         type="text"
                         placeholder="Search"
-                        className="input input-bordered w-24 md:w-auto"
+                        className="input input-bordered w-24 md:w-auto placeholder-alt"
                     />
                 </div>
                 <div className="dropdown dropdown-end">
@@ -25,8 +25,8 @@ const Header = () => {
                     >
                         <div className="w-10 rounded-full">
                             <img
-                                alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                                alt="Picture"
+                                src=""
                             />
                         </div>
                     </div>
