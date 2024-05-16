@@ -1,13 +1,14 @@
 import Link from "next/link";
-import React, { Fragment } from "react";
+import React from "react";
 
 const Header = () => {
     return (
-        <div className="navbar bg-primary">
+        <div className="navbar bg-primary text-alt">
             <div className="flex-1">
-                <Link href="/" className="btn btn-ghost text-xl text-alt">
+                <Link href="/dashboard" className="btn btn-ghost text-xl ">
                     HolySheet
                 </Link>
+                <button className="ml-1">Upload</button>
             </div>
             <div className="flex-none gap-2">
                 <div className="form-control">
@@ -24,10 +25,7 @@ const Header = () => {
                         className="btn btn-ghost btn-circle avatar"
                     >
                         <div className="w-10 rounded-full">
-                            <img
-                                alt="Picture"
-                                src=""
-                            />
+                            <img alt="Picture" src="" />
                         </div>
                     </div>
                     <ul

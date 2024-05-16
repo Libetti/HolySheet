@@ -1,1 +1,1 @@
-export default Navbar;
+export default Profile;
