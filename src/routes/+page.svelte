@@ -7,6 +7,8 @@
 </svelte:head>
 
 <script lang="ts">
+	import { Button } from '$lib/components/ui/button';
+
 	const upcomingFeatures = [
 		'Users and authentication',
 		'Profiles',
@@ -15,107 +17,47 @@
 	];
 </script>
 
-<div class="shell">
-	<section class="hero">
-		<p class="eyebrow">HolySheet</p>
-		<h1>Basic now. Ready for the real app later.</h1>
-		<p class="intro">
+<div
+	class="from-background via-muted/30 to-background min-h-screen bg-gradient-to-b px-6 py-12 text-foreground"
+>
+	<div class="mx-auto grid w-full max-w-5xl gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+		<section class="rounded-4xl border bg-card/80 p-8 shadow-lg backdrop-blur sm:p-10">
+			<p class="text-muted-foreground text-xs font-semibold tracking-[0.3em] uppercase">
+				HolySheet
+			</p>
+			<h1 class="mt-4 max-w-[10ch] text-5xl leading-none font-semibold tracking-tight sm:text-7xl">
+				Basic now. Ready for the real app later.
+			</h1>
+			<p class="text-muted-foreground mt-6 max-w-2xl text-base leading-7 sm:text-lg">
 			This starter keeps things intentionally simple so we can layer in product decisions when
 			you are ready.
-		</p>
-	</section>
+			</p>
 
-	<section class="panel">
-		<h2>Planned foundation</h2>
-		<ul>
-			{#each upcomingFeatures as feature}
-				<li>{feature}</li>
-			{/each}
-		</ul>
-	</section>
+			<div class="mt-8 flex flex-wrap gap-3">
+				<Button href="https://www.shadcn-svelte.com/docs">Browse shadcn-svelte</Button>
+				<Button href="https://tailwindcss.com/docs" variant="outline">Tailwind docs</Button>
+			</div>
+		</section>
+
+		<section class="rounded-4xl border bg-card p-8 shadow-sm sm:p-10">
+			<div class="flex items-center justify-between gap-4">
+				<div>
+					<p class="text-sm font-medium">Planned foundation</p>
+					<p class="text-muted-foreground mt-1 text-sm">Now styled with Tailwind and shadcn.</p>
+				</div>
+				<div class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-medium">
+					{upcomingFeatures.length} items
+				</div>
+			</div>
+
+			<ul class="mt-6 grid gap-3">
+				{#each upcomingFeatures as feature}
+					<li class="bg-muted/50 flex items-center gap-3 rounded-2xl border px-4 py-3">
+						<span class="bg-primary h-2.5 w-2.5 rounded-full"></span>
+						<span class="text-sm sm:text-base">{feature}</span>
+					</li>
+				{/each}
+			</ul>
+		</section>
+	</div>
 </div>
-
-<style>
-	:global(body) {
-		margin: 0;
-		font-family:
-			'Helvetica Neue',
-			Helvetica,
-			Arial,
-			sans-serif;
-		background:
-			radial-gradient(circle at top, #f8efe2 0%, #f6f2ea 35%, #efe9df 100%);
-		color: #1f2933;
-	}
-
-	.shell {
-		min-height: 100vh;
-		display: grid;
-		place-items: center;
-		padding: 2rem;
-		gap: 1.5rem;
-	}
-
-	.hero,
-	.panel {
-		width: min(42rem, 100%);
-		background: rgba(255, 255, 255, 0.7);
-		border: 1px solid rgba(31, 41, 51, 0.08);
-		border-radius: 1.5rem;
-		padding: 2rem;
-		box-shadow: 0 18px 50px rgba(31, 41, 51, 0.08);
-		backdrop-filter: blur(10px);
-	}
-
-	.eyebrow {
-		margin: 0 0 0.75rem;
-		text-transform: uppercase;
-		letter-spacing: 0.18em;
-		font-size: 0.8rem;
-		color: #8a5a44;
-	}
-
-	h1,
-	h2 {
-		margin: 0;
-	}
-
-	h1 {
-		font-size: clamp(2.5rem, 8vw, 4.75rem);
-		line-height: 0.95;
-		max-width: 10ch;
-	}
-
-	.intro {
-		margin: 1rem 0 0;
-		max-width: 42ch;
-		font-size: 1.05rem;
-		line-height: 1.6;
-		color: #52606d;
-	}
-
-	.panel h2 {
-		font-size: 1.1rem;
-		margin-bottom: 1rem;
-	}
-
-	ul {
-		margin: 0;
-		padding-left: 1.2rem;
-		display: grid;
-		gap: 0.75rem;
-		color: #334e68;
-	}
-
-	li::marker {
-		color: #c26d3a;
-	}
-
-	@media (max-width: 640px) {
-		.hero,
-		.panel {
-			padding: 1.5rem;
-			border-radius: 1.25rem;
-		}
-	}
-</style>
